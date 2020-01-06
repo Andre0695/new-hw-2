@@ -1,0 +1,51 @@
+---
+title: "hw 2"
+author: "Andre"
+date: "26 9 2019"
+output: html_document
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(dplyr)
+library(httr)
+library(rjstat)
+library(lubridate)
+library(zoo)
+library(conflicted)
+```
+#lubridate og ZOO for datoen
+```{r setup include=False}
+conflict_prefer("filter", "dplyr")
+```
+#så at dplyr vinner og blir brukt
+
+```{r }
+alldata <-read.csv("http://data.ssb.no/api/v0/dataset/95274.csv?lang=no")
+read.table("http://data.ssb.no/api/v0/dataset/95274.csv?lang=no")
+
+```
+
+//```{r setup, include=FALSE}
+urrl <- "http://data.ssb.no/api/v0/dataset/95274.json?lang=no"
+d.temp <- get(urrl)
+tabel <- fromJSONstat(content(tabel, "text"))
+ds <-tabel[[1]]
+
+
+```
+
+//```{r setup, include=FALSE}
+urll <-"http://data.ssb.no/api/v0/dataset/95274.json?lang=no"
+d.temp <- get(urll)
+stabel1 <- fromJSONstat(content(tabel,"text"))
+ds1 <- stabel1[[2]] 
+
+```{r}
+alldata <- rbind(ds, ds2)
+
+```
+
+
